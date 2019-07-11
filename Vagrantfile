@@ -1,3 +1,4 @@
+#basic centos7 buid
 $samplescript = <<SCRIPT
 yum install -y httpd
 systemctl enable httpd
