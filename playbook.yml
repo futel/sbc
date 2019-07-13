@@ -2,7 +2,11 @@
 - hosts: all
   become: true
   tasks:
-    - name: install vim
-      yum: pkg=vim state=present
-    - name: install emacs
-      yum: pkg=emacs state=present
+    - name: install wget
+      yum: pkg=wget state=present
+    - name: get kamailio
+      get_url:
+        url: http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/CentOS_7/home:kamailio:v5.2.x-rpms.repo
+        dest: /etc/yum.repos.d/
+    - name: install kamailio
+      yum: pkg=kamailio state=present
