@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: install vim
+      yum: pkg=vim state=present
+    - name: install emacs
+      yum: pkg=emacs state=present
