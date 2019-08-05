@@ -13,7 +13,7 @@
     - name: install bison
       yum: pkg=bison state=present
     - name: get kamailio
-       get_url:
+      get_url:
         url: http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/CentOS_7/home:kamailio:v5.1.x-rpms.repo
         dest: /etc/yum.repos.d/
     - name: install kamailio
