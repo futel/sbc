@@ -18,7 +18,7 @@
         dest: /etc/yum.repos.d/
     - name: install kamailio
       yum: pkg=kamailio state=present
-    - name: replace kamailio config file
+    - name: replace kamailio config file with one configured for sip proxying
       copy:
         src: kamailio.cfg
         dest: /etc/kamailio/kamailio.cfg
