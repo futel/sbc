@@ -18,4 +18,7 @@
         dest: /etc/yum.repos.d/
     - name: install kamailio
       yum: pkg=kamailio state=present
-
+    - name: replace kamailio config file
+      copy:
+        src: kamailio.cfg
+        dest: /etc/kamailio/kamailio.cfg
