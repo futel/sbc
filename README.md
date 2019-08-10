@@ -14,11 +14,8 @@ vagrant up
 To configure as SIP Proxy server to pass through to a futel asteriskserver vm:
 
 -vagrant ssh into centos7 vm
-
 -sudo -i
 -vi /etc/kamailio/kamailio.cfg
---dG at top of kamailio.cfg to clear the file
---[COPY PASTE from here https://blog.voipxswitch.com/2015/03/27/kamailio-basic-sip-proxy-all-requests-setup/]
 --edit kamailio.cfg to define 
     (1) IP address -- use IP of this centos7 vm
     (2) switch IP address -- use IP of asterisk vm 
@@ -26,5 +23,5 @@ To configure as SIP Proxy server to pass through to a futel asteriskserver vm:
 --save changes and exit vi
 -systemctl daemon-reload
 -systemctl enable kamailio
--exit vagrant ssh
+-exit from vagrant ssh
 -vagrant reload
