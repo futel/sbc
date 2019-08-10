@@ -12,7 +12,9 @@ git clone this repo
 vagrant up
 
 To configure as SIP Proxy server to pass through to a futel asteriskserver vm:
+
 -vagrant ssh into centos7 vm
+
 -sudo -i
 -vi /etc/kamailio/kamailio.cfg
 --dG at top of kamailio.cfg to clear the file
