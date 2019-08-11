@@ -13,9 +13,9 @@ To configure the Centos7 vm as SIP proxy server to a Futel Asterisk-server vm:
 --sudo -i
 --vi /etc/kamailio/kamailio.cfg
 ---edit kamailio.cfg to define: 
-----IP address (use IP of this centos7 vm)
-----switch IP address (use IP of asterisk vm)
-----destination (use IP of asterisk vm) 
+----IP address (use IP of this Centos7 vm)
+----switch IP address (use IP of Asterisk vm)
+----destination (use IP of Asterisk vm) 
 ---save changes and exit vi
 --systemctl daemon-reload
 --systemctl enable kamailio
