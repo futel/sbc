@@ -4,12 +4,12 @@ Requirements:
 -virtualbox
 Running on an Ubuntu host.
 
-To build and start centos7 vm:
+To build and start Centos7 vm:
 -git clone this repo
 -vagrant up
 
-To configure the centos7 vm as SIP Proxy server to a futel asteriskserver vm:
--vagrant ssh into centos7 vm
+To configure the Centos7 vm as SIP proxy server to a Futel Asterisk-server vm:
+-vagrant ssh into Centos7 vm
 --sudo -i
 --vi /etc/kamailio/kamailio.cfg
 ---edit kamailio.cfg to define: 
