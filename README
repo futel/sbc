@@ -1,7 +1,8 @@
-requirements:
+Requirements:
 -vagrant
 -ansible
 -virtualbox
+Running on an Ubuntu host.
 
 To build and start centos7 vm:
 -git clone this repo
@@ -18,5 +19,5 @@ To configure the centos7 vm as SIP Proxy server to a futel asteriskserver vm:
 ---save changes and exit vi
 --systemctl daemon-reload
 --systemctl enable kamailio
---exit from vagrant ssh
+--exit vagrant ssh
 -vagrant reload
