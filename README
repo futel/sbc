@@ -1,14 +1,14 @@
-Requirements:
+## Requirements:
 -vagrant
 -ansible
 -virtualbox
 Running on an Ubuntu host.
 
-To build and start CentOS 7 vm:
+## To build and start CentOS 7 vm:
 -git clone this repo
 -vagrant up
 
-To configure the CentOS vm as SIP proxy server to a Futel Asterisk-server vm:
+## To configure the CentOS vm as SIP proxy server to a Futel Asterisk-server vm:
 -vagrant ssh into CentOS vm
 --sudo -i
 --vi /etc/kamailio/kamailio.cfg
@@ -21,3 +21,9 @@ To configure the CentOS vm as SIP proxy server to a Futel Asterisk-server vm:
 --systemctl enable kamailio
 --exit vagrant ssh
 -vagrant reload
+
+## To test SIP proxy server:
+-while running CentOS vm and Asterisk-server vm configured as described, try to register a user on a SIP client 
+--use IP of CentOS vm for registrar
+-user should only register when running (1) CentOS vm (2) kamailio.service on CentOS vm and (3) Asterisk-server vm
+--toggle each of the above components on/off to verify
