@@ -4,16 +4,16 @@ Requirements:
 -virtualbox
 Running on an Ubuntu host.
 
-To build and start Centos7 vm:
+To build and start CentOS 7 vm:
 -git clone this repo
 -vagrant up
 
-To configure the Centos7 vm as SIP proxy server to a Futel Asterisk-server vm:
--vagrant ssh into Centos7 vm
+To configure the CentOS vm as SIP proxy server to a Futel Asterisk-server vm:
+-vagrant ssh into CentOS vm
 --sudo -i
 --vi /etc/kamailio/kamailio.cfg
 ---edit kamailio.cfg to define: 
-----IP address (use IP of this Centos7 vm)
+----IP address (use IP of this CentOS vm)
 ----switch IP address (use IP of Asterisk vm)
 ----destination (use IP of Asterisk vm) 
 ---save changes and exit vi
