@@ -1,0 +1,14 @@
+put server in front of stage
+connect sip client with correct creds
+fail to connect sip client with incorrect creds
+fail to connect sip client with incorrect user
+send call with connected sip client
+receive call with connected sip client
+
+bring down stage
+fail to connect sip client with correct creds
+bring up stage
+connect sip client with correct creds
+
+put two servers in front of stage
+connect sip client to each with correct creds
