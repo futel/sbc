@@ -11,12 +11,13 @@ Running on an Ubuntu host.
 ## To configure the CentOS vm as SIP proxy server to a Futel Asterisk-server vm:
 -vagrant ssh into CentOS vm
 --sudo -i
---vi /etc/kamailio/kamailio.cfg
----edit kamailio.cfg to define: 
-----IP address (use IP of this CentOS vm)
-----switch IP address (use IP of Asterisk vm)
-----destination (use IP of Asterisk vm) 
----save changes and exit vi
+---edit /etc/kamailio/kamailio.cfg to define:
+----#!define IPADDRESS "172.28.128.32"
+----(use IP of this CentOS vm)
+----#!define SWITCH_IPADDRESS "172.28.128.33"
+----(use IP of Asterisk vm)
+----$du = "sip:172.28.128.33:5060";
+----(use IP of Asterisk vm) 
 --systemctl daemon-reload
 --systemctl enable kamailio
 --exit vagrant ssh
