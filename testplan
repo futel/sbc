@@ -1,14 +1,18 @@
 put server in front of stage
-connect sip client with correct creds
-fail to connect sip client with incorrect creds
-fail to connect sip client with incorrect user
-send call with connected sip client
-receive call with connected sip client
+sip client connects with correct creds
+sip client fails to connect with incorrect creds
+sip client fails to connect with incorrect user
+conneced sip client can send outgoing call
+connected sip client can receive incoming call
 
 bring down stage
-fail to connect sip client with correct creds
+sip client fails to connect with correct creds
 bring up stage
-connect sip client with correct creds
+sip client connects with correct creds
 
 put two servers in front of stage
-connect sip client to each with correct creds
+sip client connects to either with correct creds
+conneced sip client can send outgoing call
+connected sip client can receive incoming call
+
+connect sip client with correct creds, shut down server, bring up server, sip client reconnects
