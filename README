@@ -28,3 +28,43 @@ Running on an Ubuntu host.
 --use IP of CentOS vm for registrar
 -user should only register when running (1) CentOS vm (2) kamailio.service on CentOS vm and (3) Asterisk-server vm
 --toggle each of the above components on/off to verify
+
+example here is simple, set $du then RELAY
+alternately set $du and forward()?
+
+simpler: https://freeswitch.org/confluence/display/FREESWITCH/Kamailio+basic+setup+as+proxy+for+FreeSWITCH
+invite only rewritehostport
+do that one!
+
+dispatcher:
+
+http://kamailio.org/docs/modules/4.3.x/modules/dispatcher.html
+http://www.kamailio.org/dokuwiki/doku.php/asterisk:load-balancing-and-ha
+default dispatcher.list location:
+/var/run/kamailio/dispatcher.list
+dispacher.list format:
+1 sip:vpnbox-prod-foo.phu73l.net:5060
+
+loadmodule "dispatcher.so"
+
+route {
+...
+	# dispatch destinations
+	route(DISPATCH);
+
+# Dispatch requests
+route[DISPATCH] {
+	# round robin dispatching on gateways group '1'
+	if(!ds_select_dst("1", "4"))
+	{
+		send_reply("404", "No destination");
+		exit;
+	}
+	xlog("L_DBG", "--- SCRIPT: going to <$ru> via <$du>\n");
+	t_on_failure("RTF_DISPATCH");
+	route(RELAY);
+	exit;
+}
+
+
+
