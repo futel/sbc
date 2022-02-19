@@ -1,13 +1,3 @@
-## Requirements:
--vagrant
--ansible
--virtualbox
-Running on an Ubuntu host.
-
-## To build and start CentOS 7 vm:
--git clone this repo
--vagrant up
-
 ## To configure the CentOS vm as SIP proxy server to a Futel Asterisk-server vm:
 -vagrant ssh into CentOS vm
 --sudo -i

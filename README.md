@@ -1,5 +1,19 @@
-# kamailio_sip_proxy
+# sbc
 
-Creates CentOS 7 vm from Vagrantfile.
-Provison playbook gets/installs Kamailio and associated dependencies on the CentOS vm.  Requires manual configuration of server IP addresses.
-Built to interact with an Asterisk-server vm built from here: https://github.com/kra/futel-installation/tree/master/asteriskserver
+Build a kamailio session border controller for Futel.
+
+## Requirements
+
+We are using some versions of ubuntu, virtualbox, vagrant, ansible.
+
+## Build/Deploy
+
+vagrant up
+
+## Configure
+
+XXX see README
+
+## Test
+
+XXX see README
