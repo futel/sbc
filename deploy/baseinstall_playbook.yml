@@ -1,6 +1,8 @@
 ---
 - hosts: all
   become: true
+  vars:
+    src: "../src"
   tasks:
     - name: install wget
       yum: pkg=wget state=present
@@ -20,5 +22,5 @@
       yum: pkg=kamailio state=present
     - name: replace kamailio config file with one configured for sip proxying
       copy:
-        src: kamailio.cfg
+        src: "{{ src }}/kamailio.cfg"
         dest: /etc/kamailio/kamailio.cfg
