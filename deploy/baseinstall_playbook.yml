@@ -4,16 +4,16 @@
   vars:
     src: "../src"
   tasks:
-    - name: install wget
-      yum: pkg=wget state=present
-    - name: install git
-      yum: pkg=git state=present
-    - name: install gcc-c++
-      yum: pkg=gcc-c++ state=present
-    - name: install flex
-      yum: pkg=flex state=present
-    - name: install bison
-      yum: pkg=bison state=present
+    # - name: install wget
+    #   yum: pkg=wget state=present
+    # - name: install git
+    #   yum: pkg=git state=present
+    # - name: install gcc-c++
+    #   yum: pkg=gcc-c++ state=present
+    # - name: install flex
+    #   yum: pkg=flex state=present
+    # - name: install bison
+    #   yum: pkg=bison state=present
     - name: get kamailio
       get_url:
         url: http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/CentOS_7/home:kamailio:v5.1.x-rpms.repo
