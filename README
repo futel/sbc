@@ -13,6 +13,18 @@
 --exit vagrant ssh
 -vagrant reload
 
+
+XXX open firewall on asterisk stage
+
+XXX must make an endpoint that goes to sbc?
+XXX 615/sip:615@172.28.128.1;transport=udp
+exten => _6XX,1,Dial(PJSIP/615/sip:615@172.28.128.1)
+[Feb 21 16:48:02] VERBOSE[276291][C-00000001] pbx.c: Executing [615@internal-dialtone:1] Dial("PJSIP/535-00000000", "PJSIP/615@172.28.128.1") in new stack
+[Feb 21 16:48:02] ERROR[276223] chan_pjsip.c: Unable to create PJSIP channel - endpoint '172.28.128.1' was not found
+
+
+
+
 ## To test SIP proxy server:
 -while running CentOS vm and Asterisk-server vm configured as described, try to register a user on a SIP client 
 --use IP of CentOS vm for registrar
@@ -21,10 +33,6 @@
 
 example here is simple, set $du then RELAY
 alternately set $du and forward()?
-
-simpler: https://freeswitch.org/confluence/display/FREESWITCH/Kamailio+basic+setup+as+proxy+for+FreeSWITCH
-invite only rewritehostport
-do that one!
 
 dispatcher:
 
@@ -57,4 +65,29 @@ route[DISPATCH] {
 }
 
 
+simpler: https://freeswitch.org/confluence/display/FREESWITCH/Kamailio+basic+setup+as+proxy+for+FreeSWITCH
+invite only rewritehostport
+do that one!
+also:
+https://github.com/kamailio/kamailio/blob/master/misc/examples/mixed/kamailio-minimal-proxy.cfg
+https://github.com/kamailio/kamailio/blob/master/misc/examples/pkg/sip-router-basic.cfg
 
+docs
+https://www.kamailio.org/wiki/tutorials/getting-started/main
+https://www.kamailio.org/w/documentation/
+
+
+## blue/green deploy
+prod kamailio points to prod asterisk
+create stage kamailio pointing to stage asterisk
+test test test
+update stage to point to prod asterisk
+test test test
+update dns to promote stage to prod
+image, delete prod
+
+## virtualbox
+first create asterisk vm
+point kamailio vm to asterisk vm?
+does this imply *_secrets_flavored on kamilio box?
+does this imply some kind of flavored endpoint creds on asterisk box?
